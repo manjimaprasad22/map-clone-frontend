@@ -56,8 +56,8 @@ gethistoryById()
         id: localStorage.getItem('id'),
       });
   
-      console.log('History added successfully:', response.data);
-      
+      console.log(response.data);
+      gethistoryById()
     } catch (error) {
       console.error('Error adding history:', error);
     }
@@ -84,19 +84,10 @@ gethistoryById()
  
   return (
     <div>
-      <div className='searchbox'>
-        <GooglePlacesAutocomplete
-          apiKey=""
-          selectProps={{
-            placeholder: 'Search Location',
-            onChange: handlePlaceSelect,
-            
-          }}
-
-
-        />
-      </div>
-      <div className='col-3 history'>
+     <div className="d-flex">
+        {history?.length > 0 &&
+        
+       <div className='col-3 history'>
         <h4>History</h4>
         {history?.map((obj,index)=>{
             return(
@@ -113,6 +104,21 @@ gethistoryById()
             )
         })}
       </div>
+        }
+      <div className='searchbox'>
+        <GooglePlacesAutocomplete
+          apiKey=""
+          selectProps={{
+            placeholder: 'Search Location',
+            onChange: handlePlaceSelect,
+            
+          }}
+
+
+        />
+      </div>
+     </div>
+     
       <iframe
         className='map'
         title="Google Maps"

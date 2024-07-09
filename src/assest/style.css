@@ -35,3 +35,11 @@
     border-radius: 10px;
     padding: 30px;
 }
+.css-1nmdiq5-menu{
+    position: relative !important;
+    z-index: 10 !important;
+}
+#react-select-3-listbox{
+    position: relative !important;
+    z-index: 10 !important;
+}
