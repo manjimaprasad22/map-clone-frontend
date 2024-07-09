@@ -1,0 +1,37 @@
+.searchbox{
+    position: absolute;
+    margin: 10px;
+    width: 50%;
+    z-index: 1;
+}
+.map{
+    position: relative;
+}
+.login-button, .login-button:hover{
+    background: var(--bg, linear-gradient(94deg, #001f60 0%, #1c49a6 33.82%, #4a70d0 64.66%, #ff3e94 100%));
+    color: #fff;
+    border-radius: 36px;
+    font-weight: 700;
+    font-size: 16px;
+    padding: 15px 30px;
+    justify-content: center;
+    align-items: center;
+    border: none;
+    margin-top: 20px;
+}
+.banner{
+    width: 100%;
+}
+.social button{
+    margin: 3px;
+    margin-bottom: 20px;
+}
+.history{
+    margin: 150px 20px;
+    position: absolute;
+    z-index: 1;
+    box-shadow: rgba(0, 0, 0, 0.16) 0px 1px 4px;
+    background-color: white;
+    border-radius: 10px;
+    padding: 30px;
+}

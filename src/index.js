@@ -3,11 +3,22 @@ import ReactDOM from 'react-dom/client';
 import './index.css';
 import App from './App';
 import reportWebVitals from './reportWebVitals';
+import { BrowserRouter } from 'react-router-dom';
+import { GoogleOAuthProvider } from '@react-oauth/google';
+import { ToastContainer } from 'react-toastify';
+import 'react-toastify/dist/ReactToastify.css';
 
 const root = ReactDOM.createRoot(document.getElementById('root'));
+const clientId = "id"
 root.render(
   <React.StrictMode>
+     <ToastContainer />
+    <BrowserRouter>
+    <GoogleOAuthProvider clientId={clientId}>
+
     <App />
+    </GoogleOAuthProvider>
+    </BrowserRouter>
   </React.StrictMode>
 );
 

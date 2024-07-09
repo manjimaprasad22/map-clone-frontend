@@ -1,23 +1,23 @@
 import logo from './logo.svg';
 import './App.css';
+import { Route, Routes } from "react-router-dom";
+import Googlemap from './components/Googlemap';
+import Login from './components/Login';
+import Signin from './view/Signin';
+import Singup from './view/Singup';
+import Home from './view/Home';
+import VerifyOtp from './view/VerifyOtp';
+
 
 function App() {
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
+    <div>
+      <Routes>
+        <Route path='/' element={<Signin/>}/>
+        <Route path='/register' element={<Singup/>}/>
+        <Route path='/verifyotp' element={<VerifyOtp/>}/>
+        <Route path='/map' element={<Home/>}/>
+      </Routes>
     </div>
   );
 }
