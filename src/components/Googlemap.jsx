@@ -7,6 +7,7 @@ import History from './History';
 
 const { REACT_APP_API } = process.env;
 const Googlemap = () => {
+  const  API_KEY  = ''
   const token = localStorage.getItem('accessToken')
   const id = localStorage.getItem('id')
   const [src, setsrc] = useState()
@@ -15,7 +16,7 @@ const Googlemap = () => {
   const [places, setplaces] = useState([])
   const [history, sethistory] = useState([])
   useEffect(() => {
-    setsrc(`https://www.google.com/maps/embed/v1/place?q=${lat},${long}&key=`)
+    setsrc(`https://www.google.com/maps/embed/v1/place?q=${lat},${long}&key=${API_KEY}`)
 gethistoryById()
   }, [lat, long])
 
@@ -107,7 +108,7 @@ gethistoryById()
         }
       <div className='searchbox'>
         <GooglePlacesAutocomplete
-          apiKey=""
+          apiKey={API_KEY}
           selectProps={{
             placeholder: 'Search Location',
             onChange: handlePlaceSelect,
